@@ -1,0 +1,117 @@
+{
+  "template": "app",
+  "imports": {
+    "Volo.Abp.LeptonXTheme": {
+      "version": "4.0.5",
+      "isInstalled": true
+    },
+    "Volo.Abp.TextTemplateManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.LanguageManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict.Pro": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.Gdpr": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.AuditLogging.Pro": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Saas": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.Identity.Pro": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.Account.Pro": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.PermissionManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    }
+  },
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "OpenAcademy.Application": {
+      "path": "src/OpenAcademy.Application/OpenAcademy.Application.abppkg",
+      "folder": "src"
+    },
+    "OpenAcademy.Application.Tests": {
+      "path": "test/OpenAcademy.Application.Tests/OpenAcademy.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "OpenAcademy.MongoDB": {
+      "path": "src/OpenAcademy.MongoDB/OpenAcademy.MongoDB.abppkg",
+      "folder": "src"
+    },
+    "OpenAcademy.MongoDB.Tests": {
+      "path": "test/OpenAcademy.MongoDB.Tests/OpenAcademy.MongoDB.Tests.abppkg",
+      "folder": "test"
+    },
+    "OpenAcademy.Domain.Shared": {
+      "path": "src/OpenAcademy.Domain.Shared/OpenAcademy.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "OpenAcademy.Application.Contracts": {
+      "path": "src/OpenAcademy.Application.Contracts/OpenAcademy.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "OpenAcademy.HttpApi": {
+      "path": "src/OpenAcademy.HttpApi/OpenAcademy.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "OpenAcademy.HttpApi.Client": {
+      "path": "src/OpenAcademy.HttpApi.Client/OpenAcademy.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "OpenAcademy.TestBase": {
+      "path": "test/OpenAcademy.TestBase/OpenAcademy.TestBase.abppkg",
+      "folder": "test"
+    },
+    "OpenAcademy.Domain.Tests": {
+      "path": "test/OpenAcademy.Domain.Tests/OpenAcademy.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "OpenAcademy.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/OpenAcademy.HttpApi.Client.ConsoleTestApp/OpenAcademy.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "OpenAcademy.DbMigrator": {
+      "path": "src/OpenAcademy.DbMigrator/OpenAcademy.DbMigrator.abppkg",
+      "folder": "src"
+    },
+    "OpenAcademy.Blazor": {
+      "path": "src/OpenAcademy.Blazor/OpenAcademy.Blazor.abppkg",
+      "folder": "src"
+    },
+    "OpenAcademy.Domain": {
+      "path": "src/OpenAcademy.Domain/OpenAcademy.Domain.abppkg",
+      "folder": "src"
+    }
+  }
+}

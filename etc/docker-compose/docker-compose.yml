@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  openacademy-blazor:
+    image: mycompanyname/openacademy-blazor:latest
+    container_name: openacademy-blazor
+    build:
+      context: ../../
+      dockerfile: src/OpenAcademy.Blazor/Dockerfile.local
+    environment:
+      - ASPNETCORE_URLS=https://+:443;http://+:80;
+      - Kestrel__Certificates__Default__Path=/root/certificate/localhost.pfx
+      - Kestrel__Certificates__Default__Password=5cdedd32-3eb4-49c2-97ae-b2e5c6f5a154
+      - App__SelfUrl=https://localhost:44314
+      - AuthServer__RequireHttpsMetadata=false      
+      - AuthServer__Authority=http://openacademy-blazor
+      - ConnectionStrings__Default=mongodb://mongodb/OpenAcademy
+    ports:
+      - "44314:443"
+    restart: on-failure
+    volumes:
+      - ./certs:/root/certificate
+    networks:
+      - abp-network
+
+  db-migrator:
+    image: mycompanyname/openacademy-db-migrator:latest
+    container_name: db-migrator
+    build:
+      context: ../../
+      dockerfile: src/OpenAcademy.DbMigrator/Dockerfile.local
+    environment:
+      - OpenIddict__Applications__OpenAcademy_BlazorServerTiered__RootUrl=https://localhost:44314
+      - OpenIddict__Applications__OpenAcademy_Swagger__RootUrl=https://localhost:44300
+      - ConnectionStrings__Default=mongodb://mongodb/OpenAcademy
+      - Redis__Configuration=redis
+    restart: on-failure
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - abp-network
+  
+  mongodb:
+    container_name: mongodb
+    image: mongo:4.2
+    ports:
+      - "27017:27017"
+    volumes:
+       - mongodb_data:/data/db
+    networks:
+      - abp-network
+    healthcheck:
+      test: echo 'db.stats().ok' | mongo localhost:27017/test --quiet
+      interval: 10s
+      timeout: 10s
+      retries: 10    
+
+volumes:
+  mongodb_data:
+    name: openacademy_mongodb_data  
+networks:
+  abp-network:
+    name: openacademy-network
+    driver: bridge

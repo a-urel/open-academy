@@ -1,0 +1,11 @@
+global:
+  hosts:
+    dbmigrator: "[RELEASE_NAME]-dbmigrator"
+    blazorserver: "[RELEASE_NAME]-blazorserver"
+  connectionStrings:
+    default: "mongodb://[RELEASE_NAME]-mongodb:27017/OpenAcademy"
+  dotnetEnvironment: "Staging"
+  disablePII: "false"
+  stringEncryptionDefaultPassPhrase: "8B5fleMGmLcHhGqi"
+  abpStudioClient:
+    isLinkEnabled: "true"

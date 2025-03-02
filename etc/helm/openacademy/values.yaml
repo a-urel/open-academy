@@ -1,0 +1,4 @@
+global:
+  tlsSecret: "openacademy-local-tls"
+  abpStudioClient:
+    studioUrl: "http://abp-studio-proxy:38271"
