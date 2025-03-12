@@ -2,7 +2,7 @@
   "template": "app",
   "imports": {
     "Volo.Abp.LeptonXTheme": {
-      "version": "4.0.5",
+      "version": "4.0.7",
       "isInstalled": true
     },
     "Volo.Abp.TextTemplateManagement": {
